@@ -169,6 +169,8 @@ display( void )
             glColor3f( .2 , .2 , .9 ) ; 
         else if ( name == "Pluto" ) 
             glColor3f( .6 , .6 , .6 ) ; 
+		else 
+			glColor3f(.6, .1, .1);
 
         ::glTranslatef( tracker.get_pos().x , 
                         tracker.get_pos().y , 
@@ -181,7 +183,9 @@ display( void )
 
     // draw trackers labels
     {
-        double modelview_matrix[ 16 ] ;
+		glColor3f(.9, .9, .9);
+		
+		double modelview_matrix[ 16 ] ;
         double projection_matrix[ 16 ] ;
         int    viewport[ 4 ] ;
         ::glGetIntegerv( GL_VIEWPORT , 
@@ -271,6 +275,21 @@ idle( void )
 void 
 key( unsigned char k , int x , int y )
 {
+<<<<<<< HEAD
+=======
+	b[k] = ! b[k] ;
+
+	//printf("%d", k);
+
+	//W,S
+	if (k == 119) {
+		eye_dolly -= 0.5;
+	}
+	if (k == 115) {
+		eye_dolly += 0.5;
+	}
+
+>>>>>>> Platform Upgrade
     if( k == 27 || k == 'q' ) 
         exit( 0 ) ;
 
